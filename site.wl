@@ -21,7 +21,7 @@ Home:
     "Title >> color: #2c3e50; font-size: 48px": "**WebLite**"
     "Subtitle >> color: #7f8c8d; font-size: 20px": "Build websites *_instantly_* using YAML"
     "CTA >> background-color: #e67e22; color: white; padding: 12px 28px": "Start Building &#8594"
-    Image: "https://source.unsplash.com/featured/?technology,web"
+    "Image >> width:100px; height: 50px": "https://source.unsplash.com/featured/?technology,web"
 
   Features:
     style:

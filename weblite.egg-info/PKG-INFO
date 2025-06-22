@@ -2,12 +2,211 @@ Metadata-Version: 2.4
 Name: weblite
 Version: 0.1
 Summary: A DSL-based static site generator using YAML.
-Author: Your Name
+Author: S C G SREE SOORYA KUMAR
 Requires-Python: >=3.6
 Description-Content-Type: text/markdown
+License-File: LICENSE
 Requires-Dist: pyyaml
+Requires-Dist: shutil
+Requires-Dist: argparse
 Dynamic: author
+Dynamic: description
 Dynamic: description-content-type
+Dynamic: license-file
 Dynamic: requires-dist
 Dynamic: requires-python
 Dynamic: summary
+
+### WebLite
+
+````markdown
+# WebLite
+
+A minimal static site builder powered by YAML.
+
+---
+
+## What is WebLite?
+
+WebLite lets you build styled static websites using only YAML. Define content and styles in `.wl` files, and WebLite generates the HTML and CSS for you â€” no HTML, CSS, or JS knowledge needed.
+
+---
+
+## Installation
+
+### Clone the Repository
+
+```bash
+git clone https://github.com/yourusername/weblite.git
+cd weblite
+````
+
+### Install Dependencies
+
+```bash
+pip install -r requirements.txt
+```
+
+### Install the CLI Tool
+
+```bash
+pip install -e .
+```
+
+You can now run the command:
+
+```bash
+weblite site.wl
+```
+
+---
+
+## Project Structure
+
+```
+/WebLite
+â”œâ”€â”€ weblite/
+â”‚   â”œâ”€â”€ builder.py
+â”‚   â”œâ”€â”€ cli.py
+â”‚   â””â”€â”€ __main__.py
+â”œâ”€â”€ site.wl              # Site definition
+â”œâ”€â”€ output/              # Generated HTML/CSS
+â”œâ”€â”€ README.md
+```
+
+---
+
+## How It Works
+
+1. Write your content in `site.wl`
+2. Run `weblite site.wl`
+3. WebLite generates an HTML/CSS static site in the `output` folder
+
+---
+
+## YAML Format Overview
+
+### Basic Structure
+
+```yaml
+Home:
+  Hero:
+    Title: "Welcome to WebLite"
+    Subtitle: "Build websites instantly using YAML"
+```
+
+### Section Styling
+
+```yaml
+  Hero:
+    style:
+      background-color: "#fefefe"
+      padding: 40px
+```
+
+### Inline Styling
+
+```yaml
+    "Title >> color: #333; font-size: 36px": "Welcome"
+    "CTA >> background-color: #007bff; color: white": "Get Started"
+```
+
+### Nav and Footer
+
+```yaml
+Nav:
+  - Home
+  - Docs
+  - Contact
+
+NavStyle:
+  background-color: "#222"
+  color: white
+  text-align: center
+  padding: 15px
+
+Footer:
+  Text: "Built using WebLite | Â© 2025"
+```
+
+---
+
+## Built-in Tags
+
+| Key               | Tag    |
+| ----------------- | ------ |
+| Title             | h1     |
+| Subtitle          | h2     |
+| Description, Text | p      |
+| CTA, Button       | button |
+| Link              | a      |
+| Image             | img    |
+
+---
+
+## Example
+
+```yaml
+Nav:
+  - Home
+  - Showcase
+  - Docs
+
+NavStyle:
+  background-color: "#1a1a1a"
+  color: white
+  text-align: center
+  padding: 15px
+
+Footer:
+  Text: "Built using WebLite | Â© 2025"
+
+Home:
+  Hero:
+    style:
+      background-color: "#fefefe"
+      padding: 60px
+    "Title >> color: #2c3e50; font-size: 48px": "WebLite"
+    "Subtitle >> color: #7f8c8d; font-size: 20px": "Build websites instantly"
+    "CTA >> background-color: #e67e22; color: white": "Start Building"
+    Image: "https://source.unsplash.com/featured/?technology,web"
+
+  Features:
+    style:
+      background-color: "#ffffff"
+      padding: 40px
+    Title: "Why WebLite?"
+    Subtitle: "Structured. Styled. Simple."
+    Items:
+      - "p >> color: #444; font-size: 18px": "YAML-based site definitions"
+      - "p >> color: #444; font-size: 18px": "Instant HTML and CSS output"
+      - "p >> color: #444; font-size: 18px": "No manual CSS needed"
+```
+
+---
+
+## Hosting Options
+
+Upload the `output/` folder to:
+
+* GitHub Pages
+* Netlify / Vercel
+* Any web server
+
+---
+
+## License
+
+**GNU General Public License v3.0**
+
+This program is free software: you can redistribute it and/or modify it under the terms of the GNU GPL as published by the Free Software Foundation, either version 3 of the License, or (at your option) any later version.
+
+This software is distributed in the hope that it will be useful, but without any warranty; without even the implied warranty of merchantability or fitness for a particular purpose.
+
+See the full license at: [https://www.gnu.org/licenses/gpl-3.0.en.html](https://www.gnu.org/licenses/gpl-3.0.en.html)
+
+---
+
+Build clean. Build fast. Build with YAML.
+
+---
