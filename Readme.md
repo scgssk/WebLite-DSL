@@ -1,48 +1,131 @@
-### WebLite
+---
 
 ````markdown
-# WebLite
+# 🚀 WebLite
 
-A minimal static site builder powered by YAML.
+[![MIT License](https://img.shields.io/badge/license-GPLv3-blue.svg)](LICENSE)
+[![Made with Python](https://img.shields.io/badge/Made%20with-Python%203.11-blue?logo=python)](https://www.python.org/)
+[![Build Sites Fast](https://img.shields.io/badge/Build%20Sites-FAST-success?style=flat&logo=fastapi)]()
+[![YAML Powered](https://img.shields.io/badge/YAML-Powered-yellow?logo=yaml)]()
+
+WebLite is a **blazing-fast, YAML-powered static site builder** that lets you build beautiful websites _without writing any HTML or CSS_. Just write structured content in `.wl` files and generate full HTML pages in a flash.
+
+> Think of it as Markdown meets HTML — with built-in styling superpowers.
 
 ---
 
-## What is WebLite?
+## ✨ Features
 
-WebLite lets you build styled static websites using only YAML. Define content and styles in `.wl` files, and WebLite generates the HTML and CSS for you — no HTML, CSS, or JS knowledge needed.
+- ✅ Write your entire website in YAML
+- 🎨 Apply inline styles without touching CSS
+- ⚡ Converts YAML to static HTML + CSS
+- 🧠 Supports semantic tags (Title, Subtitle, CTA, etc.)
+- 📂 Auto-generates clean output folder
+- 🛠️ Easy to extend and customize
 
 ---
 
-## Installation
+## 📦 Installation
 
-### Clone the Repository
+### 1. Clone the Repository
 
 ```bash
-git clone https://github.com/yourusername/weblite.git
+git clone https://github.com/your-username/weblite.git
 cd weblite
 ````
 
-### Install Dependencies
+### 2. Install Requirements
 
 ```bash
 pip install -r requirements.txt
 ```
 
-### Install the CLI Tool
+### 3. Install WebLite CLI
 
 ```bash
 pip install -e .
 ```
 
-You can now run the command:
+---
+
+## 🛠️ Usage
+
+Create your website definition in `site.wl`:
+
+```yaml
+Nav:
+  - Home
+  - About
+
+Home:
+  Hero:
+    Title: "**Welcome to WebLite**"
+    Subtitle: "Build websites instantly with YAML"
+    CTA >> background-color: #ff6600; color: white: "Get Started"
+```
+
+Then build your site:
 
 ```bash
 weblite site.wl
 ```
 
+Your generated website will be inside the `/output` folder.
+
 ---
 
-## Project Structure
+## 🧾 YAML Reference
+
+### Global Elements
+
+```yaml
+Nav: [Home, About, Contact]
+NavStyle:
+  background-color: "#222"
+  color: white
+Footer:
+  Text: "&copy 2025 WebLite"
+```
+
+### Section Styling
+
+```yaml
+Hero:
+  style:
+    background-color: "#fefefe"
+    padding: 40px
+```
+
+### Inline Component Styling
+
+```yaml
+  "Title >> color: #333; font-size: 36px": "**WebLite**"
+  "CTA >> background-color: orange; color: white": "Get Started"
+```
+
+### Repeating Components
+
+```yaml
+Features:
+  Items:
+    - "p >> color: #444": "Clean YAML structure"
+    - "p >> color: #444": "Instant HTML and CSS output"
+```
+
+---
+
+## 🌐 Hosting Options
+
+After building, host the `/output` folder on:
+
+* GitHub Pages
+* Netlify
+* Vercel
+* Any web server
+
+---
+
+## 📁 Folder Structure
 
 ```
 /WebLite
@@ -50,144 +133,40 @@ weblite site.wl
 │   ├── builder.py
 │   ├── cli.py
 │   └── __main__.py
-├── site.wl              # Site definition
-├── output/              # Generated HTML/CSS
+├── site.wl            # Your YAML site definition
+├── output/            # Generated static website
 ├── README.md
+├── LICENSE
 ```
 
 ---
 
-## How It Works
+## 📄 License
 
-1. Write your content in `site.wl`
-2. Run `weblite site.wl`
-3. WebLite generates an HTML/CSS static site in the `output` folder
+This project is licensed under the [GNU General Public License v3.0](https://www.gnu.org/licenses/gpl-3.0.en.html).
 
 ---
 
-## YAML Format Overview
+## 💡 Why Use WebLite?
 
-### Basic Structure
+* No HTML required
+* No CSS files to manage
+* 100% portable, runs anywhere Python runs
+* Write once, style once, deploy instantly
+* Built for speed and simplicity
 
-```yaml
-Home:
-  Hero:
-    Title: "Welcome to WebLite"
-    Subtitle: "Build websites instantly using YAML"
+---
+
+## 🔗 Links
+
+* [Website Template Gallery (coming soon)]()
+* [Contribute to WebLite](https://github.com/scgssk/WebLite-DSL)
+* [Issues / Bugs](https://github.com/your-username/WebLite-DSL/issues)
+
+---
+
+## ❤️ Built with love by developer, for developers.
+
 ```
 
-### Section Styling
 
-```yaml
-  Hero:
-    style:
-      background-color: "#fefefe"
-      padding: 40px
-```
-
-### Inline Styling
-
-```yaml
-    "Title >> color: #333; font-size: 36px": "Welcome"
-    "CTA >> background-color: #007bff; color: white": "Get Started"
-```
-
-### Nav and Footer
-
-```yaml
-Nav:
-  - Home
-  - Docs
-  - Contact
-
-NavStyle:
-  background-color: "#222"
-  color: white
-  text-align: center
-  padding: 15px
-
-Footer:
-  Text: "Built using WebLite | © 2025"
-```
-
----
-
-## Built-in Tags
-
-| Key               | Tag    |
-| ----------------- | ------ |
-| Title             | h1     |
-| Subtitle          | h2     |
-| Description, Text | p      |
-| CTA, Button       | button |
-| Link              | a      |
-| Image             | img    |
-
----
-
-## Example
-
-```yaml
-Nav:
-  - Home
-  - Showcase
-  - Docs
-
-NavStyle:
-  background-color: "#1a1a1a"
-  color: white
-  text-align: center
-  padding: 15px
-
-Footer:
-  Text: "Built using WebLite | © 2025"
-
-Home:
-  Hero:
-    style:
-      background-color: "#fefefe"
-      padding: 60px
-    "Title >> color: #2c3e50; font-size: 48px": "WebLite"
-    "Subtitle >> color: #7f8c8d; font-size: 20px": "Build websites instantly"
-    "CTA >> background-color: #e67e22; color: white": "Start Building"
-    Image: "https://source.unsplash.com/featured/?technology,web"
-
-  Features:
-    style:
-      background-color: "#ffffff"
-      padding: 40px
-    Title: "Why WebLite?"
-    Subtitle: "Structured. Styled. Simple."
-    Items:
-      - "p >> color: #444; font-size: 18px": "YAML-based site definitions"
-      - "p >> color: #444; font-size: 18px": "Instant HTML and CSS output"
-      - "p >> color: #444; font-size: 18px": "No manual CSS needed"
-```
-
----
-
-## Hosting Options
-
-Upload the `output/` folder to:
-
-* GitHub Pages
-* Netlify / Vercel
-* Any web server
-
----
-
-## License
-
-**GNU General Public License v3.0**
-
-This program is free software: you can redistribute it and/or modify it under the terms of the GNU GPL as published by the Free Software Foundation, either version 3 of the License, or (at your option) any later version.
-
-This software is distributed in the hope that it will be useful, but without any warranty; without even the implied warranty of merchantability or fitness for a particular purpose.
-
-See the full license at: [https://www.gnu.org/licenses/gpl-3.0.en.html](https://www.gnu.org/licenses/gpl-3.0.en.html)
-
----
-
-Build clean. Build fast. Build with YAML.
-
----
