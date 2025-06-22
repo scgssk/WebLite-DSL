@@ -5,7 +5,7 @@ setup(
     version='0.1',
     packages=find_packages(),
     install_requires=[
-        'pyyaml', 'shutil', 'argparse'
+        'pyyaml', 'watchdog', 'argparse'
     ],
     entry_points={
         'console_scripts': [
