@@ -12,7 +12,7 @@ setup(
             'weblite = weblite.cli:main',
         ],
     },
-    author='Your Name',
+    author='S C G SREE SOORYA KUMAR',
     description='A DSL-based static site generator using YAML.',
     long_description=open('README.md').read(),
     long_description_content_type='text/markdown',
