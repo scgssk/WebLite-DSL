@@ -1,0 +1,13 @@
+Metadata-Version: 2.4
+Name: weblite
+Version: 0.1
+Summary: A DSL-based static site generator using YAML.
+Author: Your Name
+Requires-Python: >=3.6
+Description-Content-Type: text/markdown
+Requires-Dist: pyyaml
+Dynamic: author
+Dynamic: description-content-type
+Dynamic: requires-dist
+Dynamic: requires-python
+Dynamic: summary

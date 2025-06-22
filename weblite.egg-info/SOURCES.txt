@@ -1,0 +1,10 @@
+setup.py
+weblite/__init__.py
+weblite/builder.py
+weblite/cli.py
+weblite.egg-info/PKG-INFO
+weblite.egg-info/SOURCES.txt
+weblite.egg-info/dependency_links.txt
+weblite.egg-info/entry_points.txt
+weblite.egg-info/requires.txt
+weblite.egg-info/top_level.txt
