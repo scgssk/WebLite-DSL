@@ -1,6 +1,4 @@
-Here's the **clean WebLite documentation** without emojis and middle dots (`•`) — fully Markdown-compatible and safe for YAML-based rendering:
 
----
 
 ````markdown
 # WebLite
