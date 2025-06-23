@@ -1,5 +1,5 @@
 ````markdown
-# Contributing to WebLite
+### Contributing to WebLite
 
 Thank you for your interest in contributing to **WebLite**! 🎉
 
@@ -10,6 +10,7 @@ Thank you for your interest in contributing to **WebLite**! 🎉
    ```bash
    git clone https://github.com/your-username/WebLite-DSL.git
    cd WebLite-DSL
+   ```
 ````
 
 3. **Create a new branch**
