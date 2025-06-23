@@ -46,5 +46,3 @@ Feel free to open an [Issue](https://github.com/scgssk/WebLite-DSL/issues) if yo
 ---
 
 Thank you for helping improve WebLite 💡
-
-```
