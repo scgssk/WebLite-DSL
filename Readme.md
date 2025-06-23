@@ -31,13 +31,7 @@ git clone https://github.com/scgssk/WebLite-DSL.git
 cd WebLite-DSL
 ```
 
-### 2. Install Dependencies
-
-```bash
-pip install -r requirements.txt
-```
-
-### 3. Install WebLite CLI
+### 2. Install WebLite CLI
 
 ```bash
 pip install -e .
@@ -65,7 +59,9 @@ Home:
 2. Generate your site:
 
 ```bash
-weblite site.wl
+weblite build site.wl
+        or
+weblite dev site.wl
 ```
 
 3. Find your static website in the `output/` folder, ready to deploy!
@@ -179,6 +175,6 @@ WebLite is open-source and licensed under the [GNU General Public License v3.0](
 
 ## ❤️ Built for Developers, by Developers
 
-WebLite is a labor of love to simplify web development. Join our community, contribute, or share your creations with `#WebLite` on [X](https://x.com/)!
+WebLite is a labor of love to simplify web development. Join our community, contribute, or share your creations with `#WebLite` on [Linkedin](https://linkedin.com/)!
 
 > Star the repo on [GitHub](https://github.com/scgssk/WebLite-DSL) to support the project! 🌟
