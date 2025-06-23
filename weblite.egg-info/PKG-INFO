@@ -2,14 +2,18 @@ Metadata-Version: 2.4
 Name: weblite
 Version: 0.1
 Summary: A DSL-based static site generator using YAML.
-Author: S C G SREE SOORYA KUMAR
+Author: S C G Sree Soorya Kumar
+Classifier: Programming Language :: Python :: 3
+Classifier: Environment :: Console
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
 Requires-Python: >=3.6
 Description-Content-Type: text/markdown
 License-File: LICENSE
-Requires-Dist: pyyaml
-Requires-Dist: watchdog
-Requires-Dist: argparse
+Requires-Dist: pyyaml>=5.3
+Requires-Dist: watchdog>=3.0.0
 Dynamic: author
+Dynamic: classifier
 Dynamic: description
 Dynamic: description-content-type
 Dynamic: license-file
@@ -17,196 +21,187 @@ Dynamic: requires-dist
 Dynamic: requires-python
 Dynamic: summary
 
-### WebLite
+# 🚀 WebLite
 
-````markdown
-# WebLite
+[![GPLv3 License](https://img.shields.io/badge/License-GPLv3-blue.svg)](LICENSE)
+[![Python 3.11](https://img.shields.io/badge/Made%20with-Python%203.11-blue?logo=python)](https://www.python.org/)
+[![Blazing Fast](https://img.shields.io/badge/Build%20Sites-FAST-success?style=flat&logo=fastapi)](https://github.com/scgssk/WebLite-DSL)
+[![YAML Powered](https://img.shields.io/badge/YAML-Powered-yellow?logo=yaml)](https://yaml.org/)
 
-A minimal static site builder powered by YAML.
+**WebLite** is a **blazing-fast, YAML-powered static site generator** that lets you create stunning websites *without writing HTML or CSS*. Define your site in simple `.wl` files, and WebLite transforms them into fully styled HTML pages in seconds.
 
----
-
-## What is WebLite?
-
-WebLite lets you build styled static websites using only YAML. Define content and styles in `.wl` files, and WebLite generates the HTML and CSS for you â€” no HTML, CSS, or JS knowledge needed.
+> Think Markdown meets HTML, with built-in styling superpowers. 🪄
 
 ---
 
-## Installation
+## ✨ Why WebLite?
 
-### Clone the Repository
+- **No HTML/CSS Knowledge Needed**: Write structured YAML, and WebLite handles the rest.
+- **Blazing Fast**: Generate static sites in a flash.
+- **Inline Styling**: Add styles directly in YAML—no separate CSS files.
+- **Semantic Simplicity**: Use intuitive tags like `Title`, `Subtitle`, and `CTA`.
+- **Portable & Lightweight**: Runs anywhere Python does, with zero dependencies.
+- **Customizable**: Easily extend to fit your needs.
+
+---
+
+## 📦 Get Started
+
+### 1. Clone the Repository
 
 ```bash
-git clone https://github.com/yourusername/weblite.git
-cd weblite
-````
+git clone https://github.com/scgssk/WebLite-DSL.git
+cd WebLite-DSL
+```
 
-### Install Dependencies
+### 2. Install Dependencies
 
 ```bash
 pip install -r requirements.txt
 ```
 
-### Install the CLI Tool
+### 3. Install WebLite CLI
 
 ```bash
 pip install -e .
 ```
 
-You can now run the command:
+---
+
+## 🛠️ Build Your First Site
+
+1. Create a `site.wl` file with your website structure:
+
+```yaml
+Nav:
+  - Home
+  - About
+  - Contact
+
+Home:
+  Hero:
+    Title: "**Welcome to WebLite**"
+    Subtitle: "Build websites instantly with YAML"
+    CTA >> background-color: #ff6600; color: white: "Get Started"
+```
+
+2. Generate your site:
 
 ```bash
 weblite site.wl
 ```
 
----
-
-## Project Structure
-
-```
-/WebLite
-â”œâ”€â”€ weblite/
-â”‚   â”œâ”€â”€ builder.py
-â”‚   â”œâ”€â”€ cli.py
-â”‚   â””â”€â”€ __main__.py
-â”œâ”€â”€ site.wl              # Site definition
-â”œâ”€â”€ output/              # Generated HTML/CSS
-â”œâ”€â”€ README.md
-```
+3. Find your static website in the `output/` folder, ready to deploy!
 
 ---
 
-## How It Works
+## 🧾 YAML Syntax Guide
 
-1. Write your content in `site.wl`
-2. Run `weblite site.wl`
-3. WebLite generates an HTML/CSS static site in the `output` folder
+WebLite’s YAML syntax is intuitive and powerful. Here’s a quick overview:
 
----
+### Global Elements
 
-## YAML Format Overview
-
-### Basic Structure
+Define navigation, footer, or global styles:
 
 ```yaml
-Home:
-  Hero:
-    Title: "Welcome to WebLite"
-    Subtitle: "Build websites instantly using YAML"
+Nav:
+  - Home
+  - About
+  - Contact
+NavStyle:
+  background-color: "#222"
+  color: white
+Footer:
+  Text: "© 2025 WebLite"
 ```
 
 ### Section Styling
 
+Style entire sections with ease:
+
 ```yaml
-  Hero:
-    style:
-      background-color: "#fefefe"
-      padding: 40px
+Hero:
+  style:
+    background-color: "#fefefe"
+    padding: 40px
 ```
 
-### Inline Styling
+### Inline Component Styling
+
+Add styles directly to components:
 
 ```yaml
-    "Title >> color: #333; font-size: 36px": "Welcome"
-    "CTA >> background-color: #007bff; color: white": "Get Started"
+"Title >> color: #333; font-size: 36px": "**WebLite**"
+"CTA >> background-color: orange; color: white": "Get Started"
 ```
 
-### Nav and Footer
+### Repeating Components
+
+Create lists of styled elements:
 
 ```yaml
-Nav:
-  - Home
-  - Docs
-  - Contact
-
-NavStyle:
-  background-color: "#222"
-  color: white
-  text-align: center
-  padding: 15px
-
-Footer:
-  Text: "Built using WebLite | Â© 2025"
+Features:
+  Items:
+    - "p >> color: #444": "Clean YAML structure"
+    - "p >> color: #444": "Instant HTML and CSS output"
 ```
 
 ---
 
-## Built-in Tags
+## 🌐 Deploy Your Site
 
-| Key               | Tag    |
-| ----------------- | ------ |
-| Title             | h1     |
-| Subtitle          | h2     |
-| Description, Text | p      |
-| CTA, Button       | button |
-| Link              | a      |
-| Image             | img    |
+Host the `output/` folder on platforms like:
+
+- [GitHub Pages](https://pages.github.com/)
+- [Netlify](https://www.netlify.com/)
+- [Vercel](https://vercel.com/)
+- Any web server (e.g., Apache, Nginx)
 
 ---
 
-## Example
+## 📁 Project Structure
 
-```yaml
-Nav:
-  - Home
-  - Showcase
-  - Docs
-
-NavStyle:
-  background-color: "#1a1a1a"
-  color: white
-  text-align: center
-  padding: 15px
-
-Footer:
-  Text: "Built using WebLite | Â© 2025"
-
-Home:
-  Hero:
-    style:
-      background-color: "#fefefe"
-      padding: 60px
-    "Title >> color: #2c3e50; font-size: 48px": "WebLite"
-    "Subtitle >> color: #7f8c8d; font-size: 20px": "Build websites instantly"
-    "CTA >> background-color: #e67e22; color: white": "Start Building"
-    Image: "https://source.unsplash.com/featured/?technology,web"
-
-  Features:
-    style:
-      background-color: "#ffffff"
-      padding: 40px
-    Title: "Why WebLite?"
-    Subtitle: "Structured. Styled. Simple."
-    Items:
-      - "p >> color: #444; font-size: 18px": "YAML-based site definitions"
-      - "p >> color: #444; font-size: 18px": "Instant HTML and CSS output"
-      - "p >> color: #444; font-size: 18px": "No manual CSS needed"
+```plaintext
+/WebLite-DSL
+├── weblite/
+│   ├── builder.py      # Core site generation logic
+│   ├── cli.py         # CLI interface
+│   └── __main__.py    # Entry point
+├── site.wl            # Your YAML site definition
+├── output/            # Generated static website
+├── README.md          # This file
+├── LICENSE            # GPLv3 license
+├── requirements.txt   # Python dependencies
 ```
 
 ---
 
-## Hosting Options
+## 📜 License
 
-Upload the `output/` folder to:
-
-* GitHub Pages
-* Netlify / Vercel
-* Any web server
+WebLite is open-source and licensed under the [GNU General Public License v3.0](https://www.gnu.org/licenses/gpl-3.0.en.html).
 
 ---
 
-## License
+## 💡 Why Choose WebLite?
 
-**GNU General Public License v3.0**
-
-This program is free software: you can redistribute it and/or modify it under the terms of the GNU GPL as published by the Free Software Foundation, either version 3 of the License, or (at your option) any later version.
-
-This software is distributed in the hope that it will be useful, but without any warranty; without even the implied warranty of merchantability or fitness for a particular purpose.
-
-See the full license at: [https://www.gnu.org/licenses/gpl-3.0.en.html](https://www.gnu.org/licenses/gpl-3.0.en.html)
+- **Effortless**: No HTML, no CSS, just YAML.
+- **Fast**: Generate sites in milliseconds.
+- **Portable**: Deploy anywhere, no server-side setup.
+- **Flexible**: Style and structure your site your way.
+- **Developer-Friendly**: Built for simplicity and speed.
 
 ---
 
-Build clean. Build fast. Build with YAML.
+## 🔗 Resources
+
+- [Website Template Gallery](https://github.com/scgssk/WebLite-DSL/templates) *(Coming Soon!)*
+- [Contribute to WebLite](https://github.com/scgssk/WebLite-DSL/blob/main/CONTRIBUTING.md)
+- [Report Issues](https://github.com/scgssk/WebLite-DSL/issues)
 
 ---
+
+## ❤️ Built for Developers, by Developers
+
+WebLite is a labor of love to simplify web development. Join our community, contribute, or share your creations with `#WebLite` on [X](https://x.com/)!
+
+> Star the repo on [GitHub](https://github.com/scgssk/WebLite-DSL) to support the project! 🌟
