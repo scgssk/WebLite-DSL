@@ -1,0 +1,18 @@
+# Treat only Python and WebLite (.wl) files as source code
+*.py linguist-language=Python
+*.wl linguist-language=WebLite
+
+# Ignore everything else for language statistics
+* linguist-vendored
+
+# But explicitly mark .py and .wl files as not vendored so they count
+*.py !linguist-vendored
+*.wl !linguist-vendored
+
+# Optionally, exclude output and temp folders
+output/* linguist-vendored
+dist/* linguist-vendored
+build/* linguist-vendored
+.eggs/* linguist-vendored
+*.egg-info/* linguist-vendored
+__pycache__/* linguist-vendored
