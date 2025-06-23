@@ -2,4 +2,4 @@ output/
 __pycache__/
 *.pyc
 *.log
-weblite.egg-info/
+weblite.egg-info

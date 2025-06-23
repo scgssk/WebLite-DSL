@@ -57,14 +57,14 @@ def main():
     parser = argparse.ArgumentParser(
         prog="weblite",
         description="WebLite - Instantly build and preview static websites from YAML.",
-        epilog="Examples:\n  weblite build site.wl\n  weblite view\n  weblite dev site.wl",
+        epilog="Examples:\n  weblite build site.wl\n  weblite dev site.wl",
         formatter_class=argparse.RawDescriptionHelpFormatter
     )
 
     parser.add_argument(
         "command",
-        choices=["build", "view", "dev"],
-        help="Choose a command: 'build' to generate HTML, 'view' to start preview, 'dev' to build + watch"
+        choices=["build", "dev"],
+        help="Choose a command: 'build' to generate HTML, 'dev' to build + watch"
     )
     parser.add_argument(
         "input",
@@ -80,9 +80,6 @@ def main():
             return
         build(args.input)
         print(f"✅ Site built from {args.input}. Check output/ folder.")
-
-    elif args.command == "view":
-        view_site()
 
     elif args.command == "dev":
         if not args.input:
