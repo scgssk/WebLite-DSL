@@ -10,14 +10,13 @@
 
 ---
 
-## ✨ Why WebLite?
+## 💡 Why Choose WebLite?
 
-- **No HTML/CSS Knowledge Needed**: Write structured YAML, and WebLite handles the rest.
-- **Blazing Fast**: Generate static sites in a flash.
-- **Inline Styling**: Add styles directly in YAML—no separate CSS files.
-- **Semantic Simplicity**: Use intuitive tags like `Title`, `Subtitle`, and `CTA`.
-- **Portable & Lightweight**: Runs anywhere Python does, with zero dependencies.
-- **Customizable**: Easily extend to fit your needs.
+- **Effortless**: No HTML, no CSS, just YAML.
+- **Fast**: Generate sites in milliseconds.
+- **Portable**: Deploy anywhere, no server-side setup.
+- **Flexible**: Style and structure your site your way.
+- **Developer-Friendly**: Built for simplicity and speed.
 
 ---
 
@@ -191,14 +190,6 @@ Host the `output/` folder on platforms like:
 WebLite is open-source and licensed under the [GNU General Public License v3.0](https://www.gnu.org/licenses/gpl-3.0.en.html).
 
 ---
-
-## 💡 Why Choose WebLite?
-
-- **Effortless**: No HTML, no CSS, just YAML.
-- **Fast**: Generate sites in milliseconds.
-- **Portable**: Deploy anywhere, no server-side setup.
-- **Flexible**: Style and structure your site your way.
-- **Developer-Friendly**: Built for simplicity and speed.
 
 ### 💡 Web Development, Simplified.
 
