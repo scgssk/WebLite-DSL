@@ -10,6 +10,8 @@ Home:
 
 ```
 
+### You can use css styles also like text-align etc...
+
 ---
 
 ### 🔹 **With Navigation and Footer**
@@ -77,7 +79,7 @@ Contact:
     - "Paragraph": "Email us at support@weblite.dev"
 ```
 
-### 🔷️ *** Complex site example ***
+### 🔷️ ** Complex site example **
 ```yaml
 Nav:
   - style:
@@ -169,4 +171,3 @@ Contact:
     - "Paragraph": "Have questions or suggestions? Reach out through our social channels."
 ```
 
-### You can use css styles also like text-align etc...
