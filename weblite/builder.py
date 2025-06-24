@@ -55,7 +55,14 @@ def render_tag(tag, value, style_attr=""):
         return f"<a href='{href}' {style_attr}>{label}</a>"
 
     elif tag == "button":
-        return f"<button {style_attr}>{format_text(value)}</button>"
+        if isinstance(value, dict):
+            label = format_text(value.get("label", "Click"))
+            onclick = value.get("onclick")
+            onclick_attr = f' onclick="{onclick}"' if onclick else ""
+            return f"<button {style_attr}{onclick_attr}>{label}</button>"
+        else:
+            return f"<button {style_attr}>{format_text(value)}</button>"
+
 
     else:
         return f"<{tag} {style_attr}>{format_text(value)}</{tag}>"

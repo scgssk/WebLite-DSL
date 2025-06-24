@@ -22,9 +22,14 @@ Components:
         label: "Click Me"
 
   BlogPost:
+    - style:
+        padded: true
+        margin-bottom: 10px
+        border: "1px solid #342"
     - "Title >> small blue": "**{title}**"
     - "Paragraph >> small gray": "{snippet}"
     - "Link >> small": "{url}"
+
 
   ContactBox:
     - style:
@@ -91,11 +96,14 @@ Home:
 
   CallToAction:
     - "Title >> centered medium": "**Try it out now!**"
-    - "CTA >> background-color: #27ae60; color: white": "Launch WebLite"
+    - "CTA >> background-color: #27ae60; color: white":
+          label: "Try Me!"
+          onclick: "location.href='blog.html'"
+
     - style:
-        text-align: center
-        background-color: "#ffffff"
-        padded: true
+       text-align: center
+       background-color: "#ffffff"
+       padded: true
 
 # 🛠 Services Page
 Services:
