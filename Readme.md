@@ -38,6 +38,28 @@ pip install -e .
 
 ---
 
+⚡ Try It Online
+
+▶ Explore WebLite in your browser instantly with the WebLite TryIt Editor
+
+- [🔗 Open WebLite TryIt] (https://weblite-tryit.vercel.app/)
+
+
+
+🧑‍💻 Features:
+
+Live YAML editing with real-time preview
+
+One-click deploy to output/ directory
+
+Dark mode, responsive layout, mobile-ready
+
+Hamburger menu for mobile navbar
+
+Uses your actual builder.py logic in the backend (hosted with Flask)
+
+---
+
 ## 🛠️ Build Your First Site
 
 1. Create a `site.wl` file with your website structure:
@@ -117,8 +139,24 @@ Features:
     - "p >> color: #444": "Clean YAML structure"
     - "p >> color: #444": "Instant HTML and CSS output"
 ```
+### Reusable Components
+```yaml
+Components:
+  Card:
+    - "Title >> blue": "{title}"
+    - "Description": "{desc}"
+
+Services:
+  - Card:
+      title: "Fast"
+      desc: "Instant site generation"
+  - Card:
+      title: "Simple"
+      desc: "Only YAML required"
+```
 
 ---
+
 
 ## 🌐 Deploy Your Site
 
@@ -138,7 +176,7 @@ Host the `output/` folder on platforms like:
 ├── weblite/
 │   ├── builder.py      # Core site generation logic
 │   ├── cli.py         # CLI interface
-│   └── __main__.py    # Entry point
+│   └── __init__.py    # Entry point
 ├── site.wl            # Your YAML site definition
 ├── output/            # Generated static website
 ├── README.md          # This file
@@ -161,6 +199,11 @@ WebLite is open-source and licensed under the [GNU General Public License v3.0](
 - **Portable**: Deploy anywhere, no server-side setup.
 - **Flexible**: Style and structure your site your way.
 - **Developer-Friendly**: Built for simplicity and speed.
+
+### 💡 Web Development, Simplified.
+
+Whether you're a developer, designer, or beginner — WebLite gives you superpowers to build websites effortlessly with structured YAML.
+Let your creativity flow, and let WebLite handle the rest.
 
 ---
 
