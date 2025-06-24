@@ -17,7 +17,9 @@ Components:
         padded: true
     - "Title >> medium blue": "**{title}**"
     - "Paragraph >> gray": "{desc}"
-    - "Link >> text-decoration: none; color: #342": "{link}"
+    - "Link >> text-decoration: none; color: #342": 
+        href: "{link}"
+        label: "Click Me"
 
   BlogPost:
     - "Title >> small blue": "**{title}**"
@@ -70,10 +72,6 @@ Home:
         text-align: center
 
   Highlights:
-    - "Link >> blue centered": 
-        href: "https://github.com"
-        label: "GitHub Profile"
-        
     - ServiceCard:
         title: "Speed First"
         desc: "Your site builds in milliseconds."

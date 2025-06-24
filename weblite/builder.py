@@ -289,8 +289,7 @@ def generate_section(section_name, section_content, components=None):
 
                     for tmpl_key, tmpl_val in tmpl_items:
                         key, style_attr = parse_key_and_style(tmpl_key)
-                        for param, val in raw_value.items():
-                            tmpl_val = tmpl_val.replace(f"{{{param}}}", str(val))
+                        tmpl_val = recursive_replace(tmpl_val, raw_value)
                         html += render_semantic(key, tmpl_val, style_attr) + "\n"
                     html += "</div>\n"
 
@@ -300,6 +299,19 @@ def generate_section(section_name, section_content, components=None):
 
     html += "</section>\n"
     return html
+
+def recursive_replace(data, context):
+    if isinstance(data, str):
+        for k, v in context.items():
+            data = data.replace(f"{{{k}}}", str(v))
+        return data
+    elif isinstance(data, dict):
+        return {k: recursive_replace(v, context) for k, v in data.items()}
+    elif isinstance(data, list):
+        return [recursive_replace(item, context) for item in data]
+    else:
+        return data
+
 
 # 🖥️ Full page structure
 def generate_page(page_name, page_content, global_nav=None, global_footer=None, nav_style=None,components=None):
