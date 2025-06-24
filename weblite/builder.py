@@ -212,20 +212,32 @@ def parse_key_and_style(raw_key):
 
 def render_component(component_block):
     html = ""
+    outer_style = ""
+
     if isinstance(component_block, dict):
         for sub_key, sub_val in component_block.items():
             key, style_attr = parse_key_and_style(sub_key)
             html += render_semantic(key, sub_val, style_attr) + "\n"
 
     elif isinstance(component_block, list):
-        for sub in component_block:
-            for sub_key, sub_val in sub.items():
-                key, style_attr = parse_key_and_style(sub_key)
+        normal_items = []
+        for item in component_block:
+            if isinstance(item, dict) and "style" in item:
+                style_str = resolve_style_dict(item["style"])
+                outer_style = f' style="{style_str}"'
+            else:
+                normal_items.append(item)
 
-                # ✅ Preserve dict (used in Link, Image, etc.)
-                html += render_semantic(key, sub_val, style_attr) + "\n"
+        html += f"<div{outer_style}>\n"
+        for sub in normal_items:
+            if isinstance(sub, dict):
+                for sub_key, sub_val in sub.items():
+                    key, style_attr = parse_key_and_style(sub_key)
+                    html += render_semantic(key, sub_val, style_attr) + "\n"
+        html += "</div>\n"
 
     return html
+
 
 
 

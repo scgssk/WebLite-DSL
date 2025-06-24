@@ -22,13 +22,13 @@ Components:
         label: "Click Me"
 
   BlogPost:
+    - "Title >> small blue": "**{title}**"
+    - "Paragraph >> small gray": "{snippet}"
+    - "Link >> small": "{url}"
     - style:
         padded: true
         margin-bottom: 10px
         border: "1px solid #342"
-    - "Title >> small blue": "**{title}**"
-    - "Paragraph >> small gray": "{snippet}"
-    - "Link >> small": "{url}"
 
 
   ContactBox:
