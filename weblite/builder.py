@@ -38,15 +38,27 @@ def format_text(text):
 
 # 🔧 Render HTML tag with optional style
 def render_tag(tag, value, style_attr=""):
-    value = format_text(value)
     if tag == "img":
-        return f"<img src='{value}' {style_attr}/>"
+        if isinstance(value, dict):
+            src = value.get("src", "")
+        else:
+            src = value
+        return f"<img src='{src}' {style_attr}/>"
+    
     elif tag == "a":
-        return f"<a href='{value}' {style_attr}>{value}</a>"
+        if isinstance(value, dict):
+            href = value.get("href", "#")
+            label = value.get("label", href)
+        else:
+            href = value
+            label = value
+        return f"<a href='{href}' {style_attr}>{label}</a>"
+
     elif tag == "button":
-        return f"<button {style_attr}>{value}</button>"
+        return f"<button {style_attr}>{format_text(value)}</button>"
+
     else:
-        return f"<{tag} {style_attr}>{value}</{tag}>"
+        return f"<{tag} {style_attr}>{format_text(value)}</{tag}>"
 
 
 
@@ -197,11 +209,15 @@ def render_component(component_block):
         for sub_key, sub_val in component_block.items():
             key, style_attr = parse_key_and_style(sub_key)
             html += render_semantic(key, sub_val, style_attr) + "\n"
+
     elif isinstance(component_block, list):
         for sub in component_block:
             for sub_key, sub_val in sub.items():
                 key, style_attr = parse_key_and_style(sub_key)
+
+                # ✅ Preserve dict (used in Link, Image, etc.)
                 html += render_semantic(key, sub_val, style_attr) + "\n"
+
     return html
 
 

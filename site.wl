@@ -42,7 +42,10 @@ Components:
         align-items: center
 
   SocialIcons:
-    - "Paragraph >> centered": "Follow us: GitHub | Twitter | LinkedIn"
+    - "Link >> blue centered": 
+        href: "https://github.com"
+        label: "GitHub Profile"
+
 
 
 
@@ -67,6 +70,10 @@ Home:
         text-align: center
 
   Highlights:
+    - "Link >> blue centered": 
+        href: "https://github.com"
+        label: "GitHub Profile"
+        
     - ServiceCard:
         title: "Speed First"
         desc: "Your site builds in milliseconds."
