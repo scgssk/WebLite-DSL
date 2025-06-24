@@ -7,7 +7,6 @@
 
 **WebLite** is a **blazing-fast, YAML-powered static site generator** that lets you create stunning websites *without writing HTML or CSS*. Define your site in simple `.wl` files, and WebLite transforms them into fully styled HTML pages in seconds.
 
-> Think Markdown meets HTML, with built-in styling superpowers. 🪄
 
 ---
 
@@ -168,7 +167,7 @@ WebLite is open-source and licensed under the [GNU General Public License v3.0](
 ## 🔗 Resources
 
 - [Website Template Gallery](https://github.com/scgssk/WebLite-DSL/templates) *(Coming Soon!)*
-- [Contribute to WebLite](https://github.com/scgssk/WebLite-DSL/blob/main/CONTRIBUTING.md)
+- [Contribute to WebLite](https://github.com/scgssk/WebLite-DSL/blob/Master/CONTRIBUTING.md)
 - [Report Issues](https://github.com/scgssk/WebLite-DSL/issues)
 
 ---
