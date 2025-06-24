@@ -32,7 +32,7 @@ Home:
 
 ---
 
-**Multi-Page Site with Reusable Components**
+### 🔹 **Multi-Page Site with Reusable Components**
 
 ```yaml
 Nav:
