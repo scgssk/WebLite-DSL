@@ -12,14 +12,18 @@ Nav:
 # 🧱 Global Components
 Components:
   ServiceCard:
-    - style:
-        box: true
-        padded: true
+
     - "Title >> medium blue": "**{title}**"
     - "Paragraph >> gray": "{desc}"
     - "Link >> text-decoration: none; color: #342": 
         href: "{link}"
         label: "Click Me"
+    - style:
+        box: true
+        padded: true
+        display: flex
+        gap: 0px
+        flex-direction: column
 
   BlogPost:
     - "Title >> small blue": "**{title}**"
@@ -29,7 +33,6 @@ Components:
         padded: true
         margin-bottom: 10px
         border: "1px solid #342"
-
 
   ContactBox:
     - style:
@@ -53,18 +56,14 @@ Components:
         href: "https://github.com"
         label: "GitHub Profile"
 
-
-
-
 # 🔻 Footer
 Footer:
   - style:
       background-color: "#222"
       color: "#fff"
-      text-align: center
+      text-align: "center"
   - "Paragraph >> small gray": "Made with Love by Devs"
   - SocialIcons
-
 
 # 🏠 Home Page
 Home:
@@ -99,7 +98,6 @@ Home:
     - "CTA >> background-color: #27ae60; color: white":
           label: "Try Me!"
           onclick: "location.href='blog.html'"
-
     - style:
        text-align: center
        background-color: "#ffffff"
@@ -191,7 +189,7 @@ About:
         email: "mailto:contact@weblite.dev"
     - ContactBox:
         heading: "Support"
-        info: "Facing issues? Let’s help!"
+        info: "Facing issues? Let's help!"
         email: "mailto:support@weblite.dev"
     - style:
         background-color: "#fff3e0"
